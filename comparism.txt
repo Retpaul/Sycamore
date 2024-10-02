@@ -1,0 +1,1 @@
+Express allows us to create our server much quickly which saves time and reduces boilerplate code
