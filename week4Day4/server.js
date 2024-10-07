@@ -11,7 +11,7 @@ app.get("/products", (req, res) => {
   res.render("products", { products });
 });
 
-app.listen(3000, () => {
+app.listen(3003, () => {
   console.log('Server running on http://localhost:3000');
   });
   
