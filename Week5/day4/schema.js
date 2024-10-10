@@ -1,4 +1,4 @@
-// Define the Post schema
+const mongoose = require("mongoose");
 const bookSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
@@ -14,6 +14,11 @@ const authorSchema = new mongoose.Schema({
   books: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
 });
 
+bookSchema.pre("save",function(next) {
+    console.log('An author is about to be saved:', this);
+    next(); 
+    })
+    
 export const Author = mongoose.model("Author", authorSchema);
 export const Book = mongoose.model("Book", bookSchema);
 
